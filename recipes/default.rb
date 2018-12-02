@@ -47,7 +47,7 @@ end
 
 # install docker-compose
 execute 'install docker-compose' do
-  command 'curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose'
+  command 'curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose'
   action :run
 end
 
