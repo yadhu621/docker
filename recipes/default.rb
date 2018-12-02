@@ -51,12 +51,6 @@ execute 'install docker-compose' do
   action :run
 end
 
-# add docker-compose to path
-magic_shell_environment "PATH" do
-  value "/usr/local/bin:$PATH"
-end
-
-
 # start and enable docker service
 service 'docker' do
   action [:start, :enable]
