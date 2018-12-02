@@ -52,10 +52,10 @@ execute 'install docker-compose' do
 end
 
 # add docker-compose to path
-execute 'add docker-compose to $PATH' do
-  command 'export PATH=/usr/local/bin:$PATH'
-  action :run
+magic_shell_environment "PATH" do
+  value "/usr/local/bin:$PATH"
 end
+
 
 # start and enable docker service
 service 'docker' do
