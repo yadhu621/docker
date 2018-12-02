@@ -51,6 +51,12 @@ execute 'install docker-compose' do
   action :run
 end
 
+# add docker-compose to path
+execute 'add docker-compose to $PATH' do
+  command 'export PATH=/usr/local/bin:$PATH'
+  action :run
+end
+
 # start and enable docker service
 service 'docker' do
   action [:start, :enable]
