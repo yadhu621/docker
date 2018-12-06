@@ -17,7 +17,7 @@ execute 'yum update -y'
 
 # install container-selinux (docker dependency)
 execute 'install container-selinux' do
-  command 'sudo yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.42-1.gitad8f0f7.el7.noarch.rpm'
+  command 'sudo yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.74-1.el7.noarch.rpm'
   action :run
   not_if 'yum list installed | grep container-selinux'
 end
